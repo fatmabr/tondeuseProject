@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/filewatcher/api.filewatcher.iml" filepath="$PROJECT_DIR$/filewatcher/api.filewatcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tondeuse/tondeuse.iml" filepath="$PROJECT_DIR$/tondeuse/tondeuse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tondeuse.parent.iml" filepath="$PROJECT_DIR$/tondeuse.parent.iml" />
+    </modules>
+  </component>
+</project>
