@@ -15,6 +15,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.*;
+import java.util.logging.Logger;
 
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
@@ -29,6 +30,7 @@ import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
 @Component
 public class FileImportHandler implements InitializingBean {
 
+    Logger logger = Logger.getLogger(getClass().getName());
     @Autowired
     private ProcessorRegistry registry;
 
@@ -62,6 +64,8 @@ public class FileImportHandler implements InitializingBean {
                 StandardWatchEventKinds.ENTRY_CREATE);
         final FileImportListener importListener = new FileImportListener(dir, watcher, this);
         final Thread thread = new Thread(importListener);
+        logger.info("WATCHED DIR LOG: " +watchedDir);
+        System.out.print("WATCHED DIR LOG PRINT: " +watchedDir);
         thread.start();
     }
 }
