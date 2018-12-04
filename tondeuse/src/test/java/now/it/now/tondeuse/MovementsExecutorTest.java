@@ -21,8 +21,7 @@ public class MovementsExecutorTest {
 
     @Test
     public void testMovementExecutor() throws Exception {
-        Instruction[] instructions = {Instruction.G, Instruction.A,
-                Instruction.G, Instruction.A,
+        Instruction[] instructions = {                Instruction.G, Instruction.A,
                 Instruction.G, Instruction.A,
                 Instruction.G, Instruction.A,
                 Instruction.G, Instruction.A,
@@ -37,8 +36,7 @@ public class MovementsExecutorTest {
 
     @Test
     public void testMovementExecutor2() throws Exception {
-        Instruction[] instructions = {Instruction.G, Instruction.A,
-                Instruction.A, Instruction.A,
+        Instruction[] instructions = {                Instruction.A, Instruction.A,
                 Instruction.D, Instruction.A,
                 Instruction.A, Instruction.D,
                 Instruction.A, Instruction.D,
@@ -53,8 +51,7 @@ public class MovementsExecutorTest {
 
     @Test
     public void testConcurrency() throws Exception {
-        Instruction[] instructions1 = {Instruction.G, Instruction.A,
-                Instruction.A, Instruction.A,
+        Instruction[] instructions1 = {Instruction.A, Instruction.A,
                 Instruction.D, Instruction.A,
                 Instruction.A, Instruction.D,
                 Instruction.A, Instruction.D,
@@ -68,11 +65,8 @@ public class MovementsExecutorTest {
                 movementsExecutor.execute(pelouse, tondeuse1);
             }
         });
-        movementsExecutor.execute(pelouse, tondeuse1);
-
 
         Instruction[] instructions2 = {Instruction.G, Instruction.A,
-                Instruction.G, Instruction.A,
                 Instruction.G, Instruction.A,
                 Instruction.G, Instruction.A,
                 Instruction.G, Instruction.A,

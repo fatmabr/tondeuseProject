@@ -5,7 +5,18 @@ package now.it.now.tondeuse.model;
  */
 public class Tondeuse {
 
+    /**
+     * The position that occupy the mower at an instant t
+     * defined by x and y
+     */
     private Position position;
+    /**
+     * movements should  be done by "the mower" resulting of
+     * the instructions given in the injected file
+     * G : for left movement
+     * A : for forward movement
+     * D : for right movement
+     */
     private Instruction[] instructions;
 
     public Tondeuse() {

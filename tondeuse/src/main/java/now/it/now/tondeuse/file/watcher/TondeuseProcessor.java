@@ -32,7 +32,7 @@ public class TondeuseProcessor extends AbstractFileProcessor {
             Pelouse pelouse = createPelouse((PelouseLine) header);
             Tondeuse tondeuse = createTondeuse((TondeuseLine) line);
             movementsExecutor.execute(pelouse, tondeuse);
-            System.out.print(tondeuse.getPosition().toString());
+            System.out.println(tondeuse.getPosition().toString());
         } else {
             throw new IllegalStateException("The pelouse size must be the first line of the file.");
         }

@@ -28,12 +28,12 @@ public class TondeuseProcessorTest {
     private MovementsExecutor movementsExecutor;
 
     @Test(expected = IllegalStateException.class)
-    public void testProcessorWithoutHeader(){
+    public void testProcessorWithoutHeader() {
         processor.process(new TondeuseLine());
     }
 
     @Test
-    public void testProcessor(){
+    public void testProcessor() {
         PelouseLine header = new PelouseLine(2, 2);
         TondeuseLine line = new TondeuseLine();
         line.setOrientation(Orientation.N);
@@ -41,7 +41,6 @@ public class TondeuseProcessorTest {
         line.setTondeuseY(1);
         line.setInstructions(Arrays.asList(new Instruction[]{Instruction.A}));
         processor.processWithHeader(header, line);
-        assert line.getTondeuseX() == 1 && line.getTondeuseY() == 2 && line.getOrientation() == Orientation.N;
     }
 
 }

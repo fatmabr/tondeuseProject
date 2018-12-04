@@ -15,9 +15,16 @@ import java.util.logging.Level;
 /**
  * Created by fatma on 30/11/2018.
  */
+
+/**
+ * This is a class that permits to parse a line in the given file
+ * It permits to transform the file line to a useful object
+ * Pelouse or Tondeuse
+ */
 public class TondeuseLineParser extends CSVFileParser {
     /**
      * first line in the file represents the "pelouse" max X size and max Y size.
+     * It s represented by just one line in the file.
      */
     public static final int headerLinesCount = 1;
     /**
@@ -29,12 +36,18 @@ public class TondeuseLineParser extends CSVFileParser {
 
     public final static Character lineItemSeparator = ' ';
 
-
-
+    /**
+     * This function creates an item (Pelouse or Tondeuse) according to the size of the line list.
+     * If the line list corresponds to {@link #headerLinesCount} so it return a Pelouse Line
+     * Otherwise if the line list size corresponds to {@link #linePerItem} so it returns a Tondeuse Line
+     * @param lines
+     * @return
+     */
     public Line newItem(List<String[]> lines) {
         if (lines.size() == headerLinesCount) {
             int pelouseXSise = Integer.parseInt(lines.get(0)[0]);
             int pelouseYSise = Integer.parseInt(lines.get(0)[1]);
+            //new Pelouse
             return new PelouseLine(pelouseXSise, pelouseYSise);
         } else if (lines.size() == linePerItem) {
             TondeuseLine tondeuse = new TondeuseLine();
@@ -50,6 +63,11 @@ public class TondeuseLineParser extends CSVFileParser {
         throw new IllegalStateException("Problem in the file Format!");
     }
 
+    /**
+     * parses the instruction line and transform it from String to #Instruction enum
+     * @param lines
+     * @return
+     */
     private List<Instruction> getInstructions(List<String[]> lines) {
         String[] strings = lines.get(1);
         char[] chars = strings[0].toCharArray();

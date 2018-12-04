@@ -10,17 +10,28 @@ import now.it.now.tondeuse.service.RightMovement;
  */
 public enum Instruction {
 
+    /**
+     * FORWARD movement
+     */
     A {
         @Override
         public Movement create() {
             return new ForwardMovement();
         }
-    }, D {
+    },
+    /**
+     * RIGHT Movement
+     **/
+    D {
         @Override
         public Movement create() {
             return new RightMovement();
         }
-    }, G {
+    },
+    /**
+     * Left movement
+     */
+    G {
         @Override
         public Movement create() {
             return new LeftMovement();

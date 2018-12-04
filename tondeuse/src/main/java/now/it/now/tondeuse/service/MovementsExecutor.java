@@ -16,19 +16,15 @@ import java.util.List;
  */
 @Component
 public class MovementsExecutor {
-
     /**
+     * tondeuse execution
+     *
      * @param pelouse
      * @param tondeuse
-     * @return
      */
     public void execute(Pelouse pelouse, Tondeuse tondeuse) {
-        List<Movement> movements = new ArrayList();
-
         for (Instruction instruction : tondeuse.getInstructions()) {
-            movements.add(MovementFactory.create(instruction));
-        }
-        for (Movement movement : movements) {
+            Movement movement = MovementFactory.create(instruction);
             Position position = tondeuse.getPosition();
             movement.move(pelouse, position);
         }
