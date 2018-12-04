@@ -19,12 +19,18 @@ The file format is as follow:
                         D = Right
                         G = Left
                         A = Forward
+File example: 
 
-
+		5 5
+		1 2 N
+		GAGAGAGAA
+		3 3 E
+		AADAADADDA
+		
 This program once runned it creates a thread which listen on events of file injection in a configured folder.
 The folder is configured in the file config.properties.
 
 Installation steps:
-1- git checkout the sources.
-2- open the project with your favourite editor.
-3- configure the property "watched.file" in the /resources/config.properties.
+- git checkout the sources.
+- open the project with your favourite editor.
+- configure the property "watched.file" in the /resources/config.properties.
